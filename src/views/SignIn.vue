@@ -54,6 +54,7 @@ export default {
           email: this.email,
           password: this.password,
         });
+        this.$router.push('/login')
       } catch (error) {
         this.isShow = true
         console.log(error);
