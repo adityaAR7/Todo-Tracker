@@ -118,7 +118,7 @@ export default {
       this.isVisible = !this.isVisible;
     },
     async handleComplete(id) {
-      await axios.put(`http://localhost:3000/todo/updateTodo/${id}`);
+      await axios.put(`https://todo-tracker-backend-production.up.railway.app/todo/updateTodo/${id}`);
       const result = this.todos.filter((todo) => {
         return todo._id !== id;
       });
@@ -131,7 +131,7 @@ export default {
     async handleSubmit() {
       try {
         const response = await axios.post(
-          `http://localhost:3000/todo/addTodo/${this.user._id}`,
+          `https://todo-tracker-backend-production.up.railway.app/todo/addTodo/${this.user._id}`,
           { title: this.todoInput }
         );
         const todo = response.data.result;
@@ -147,7 +147,7 @@ export default {
   async mounted() {
     try {
       const response = await axios.get(
-        "http://localhost:3000/auth/login/success"
+        "https://todo-tracker-backend-production.up.railway.app/auth/login/success"
       );
       const result = response.data.user;
       localStorage.setItem(
@@ -155,7 +155,7 @@ export default {
         JSON.stringify(result["access_token"])
       );
       const response1 = await axios.get(
-        `http://localhost:3000/todo/fetchAll/${result._id}`
+        `https://todo-tracker-backend-production.up.railway.app/todo/fetchAll/${result._id}`
       );
       let result1 = response1.data.result;
       this.completed = result1.filter((todo) => {

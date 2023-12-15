@@ -70,7 +70,7 @@ export default {
   methods: {
     async handleLogin() {
       try {
-        const response = await axios.post("http://localhost:3000/user/login", {
+        const response = await axios.post("https://todo-tracker-backend-production.up.railway.app/user/login", {
           email: this.email,
           password: this.password,
         });
@@ -87,7 +87,7 @@ export default {
     },
     async handleGoogleAuth() {
       try {
-        window.open("http://localhost:3000/auth/google", "_self");
+        window.open("https://todo-tracker-backend-production.up.railway.app/auth/google", "_self");
       } catch (error) {
         console.log(error);
       }
@@ -96,7 +96,7 @@ export default {
   async mounted() {
     try {
       const response = await axios.get(
-        "http://localhost:3000/auth/login/success"
+        "https://todo-tracker-backend-production.up.railway.app/auth/login/success"
       );
       const result = response.data.user;
       localStorage.setItem(

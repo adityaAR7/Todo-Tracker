@@ -16,7 +16,7 @@ export default {
   name: "Header",
   methods: {
     handleLogout(){
-      window.open('http://localhost:3000/user/logout','_self')
+      window.open('https://todo-tracker-backend-production.up.railway.app/user/logout','_self')
       localStorage.clear();
       this.handleSetUser(null)
 
