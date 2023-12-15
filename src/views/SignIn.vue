@@ -36,7 +36,7 @@
 
 <script>
 import axios from "axios";
-axios.withCredentials = true;
+axios.defaults.withCredentials = true
 export default {
   data() {
     return {
