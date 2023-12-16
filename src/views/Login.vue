@@ -96,7 +96,7 @@ export default {
   async mounted() {
     try {
       const response = await axios.get(
-        "https://todo-tracker-backend-production.up.railway.app/auth/login/success"
+        "https://todo-tracker-backend-production.up.railway.app/user/login/success"
       );
       const result = response.data.user;
       localStorage.setItem(
